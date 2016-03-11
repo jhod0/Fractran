@@ -1,0 +1,6 @@
+#!/home/humphrey/GeneralPython/fractran/main.py
+# Ceil division by two
+# 2**n -> 3**(n `ceildiv` 2)
+5 / 2
+3 / 5**2
+3 / 5

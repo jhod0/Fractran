@@ -1,0 +1,5 @@
+#!/home/humphrey/GeneralPython/fractran/main.py
+# Takes 2**a * 3**b
+# If a > b, returns 2**(a-b)
+# Else, returns 3**(b-a)
+1 / 6

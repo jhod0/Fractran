@@ -1,0 +1,24 @@
+#!/home/humphrey/GeneralPython/fractran/main.py
+# multiplication
+# 2**a * 3**b => 5**(ab)
+# buffers - 7 used as copy of b
+# 11, 13: signals for move-1
+# 17, 19: signals for move-2
+# Move - 1
+5 * 7 * 11 / 3 * 13
+5 * 7 * 13 / 3 * 11
+1 / 11
+1 / 13
+# Move - 2
+3 * 5 * 17 / 7 * 19
+3 * 5 * 19 / 7 * 17
+1 / 17
+1 / 19
+# Triggers
+5 * 7 * 11 / 2 * 3
+3 * 5 * 17 / 2 * 7
+# Last cases: make sure
+# a and b return to 0
+1 / 3
+1 / 2
+1 / 7

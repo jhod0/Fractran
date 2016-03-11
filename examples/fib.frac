@@ -1,0 +1,13 @@
+#!/home/humphrey/GeneralPython/fractran/main.py
+# Fibonacci generator
+# Takes an input 2**b * 3**a
+# and produces 2**(a+b) * 3**b,
+# 2**(a+2b) * 3**(a+b), etc
+2 * 11 / 3 * 7
+2 * 3 * 17 / 5 * 13
+13 / 7
+13 / 17
+7 / 11
+1 / 13
+5 / 2
+11 / 1

@@ -1,0 +1,6 @@
+#!/home/humphrey/GeneralPython/fractran/main.py
+# Halves the input number
+# 2**n -> 3**(n `floordiv` 2)
+5 / 2
+3 / 5**2
+1 / 5
