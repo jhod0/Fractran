@@ -26,10 +26,10 @@ def parse_num(string):
         raise InvalidNumberException("Could not evaluate number", string)
     try: 
         out = eval(string)
-	if type(out) not in (int, long):
+        if type(out) not in (int, long):
             raise NotIntegerException("does not evaluate to integer", string)
         return out
-    except Exception, e:
+    except Exception as e:
         print("error evaluating")
         raise e
 

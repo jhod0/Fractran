@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import division, print_function
-from core import parse_line, FracParseException
+from .core import parse_line, FracParseException
 
 
 def process(filename):
@@ -29,7 +29,7 @@ def process(filename):
                 parsed = parse_line(line)
                 if parsed:
                     fracs.append(parsed)
-            except FracParseException, e:
+            except FracParseException as e:
                 print("Error parsing file at line {}: \n\t{}".format(i+1, line))
                 print(fracs)
                 raise e

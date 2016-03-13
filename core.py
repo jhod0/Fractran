@@ -6,9 +6,17 @@ import numbers
 
 
 class Program(object):
+    """Represents a FRACTRAN program.
+
+    Construction:
+        Takes a list of fractions, and optionally a description.
+        A fraction can either be a tuple of (numerator, denominator), or
+            an object with 'numerator' and 'denominator' fields.
+            Ex: fractions.Fraction(3, 2), or (3, 2)
+    """
     def __init__(self, ls, description=None):
         self.__fracs = []
-	self.__description = description
+        self.__description = description
         for frac in ls:
             try:
                 num, denom = frac
@@ -16,17 +24,31 @@ class Program(object):
                 try:
                     num, denom = frac.numerator, frac.denominator
                 except:
-                    raise TypeError("must provide fractran.Program either ")
+                    raise TypeError("must provide valid fraction")
             if not isinstance(num, numbers.Integral):
                 raise TypeError("numerator must be numbers.Integral")
             if not isinstance(denom, numbers.Integral):
                 raise TypeError("denominator must be numbers.Integral")
             self.__fracs.append((num, denom))
-    
+
     def description(self):
         return self.__description
 
     def eval_gen(self, n):
+        """Runs the program with input n, yielding intermediate results.
+
+        Example:
+        >>> p = Program([(5, 2), (5, 3)])
+        >>> g = p.eval_gen(12)
+        >>> g.next()
+        30
+        >>> g.next()
+        75
+        >>> g.next()
+        125
+        >>> g.next()
+        StopIteration
+        """
         if not isinstance(n, numbers.Integral):
             raise TypeError("can only evaluate numbers.Integral")
         while True:
@@ -41,9 +63,18 @@ class Program(object):
                 break
 
     def eval(self, n):
+        """Returns a list of each intermediate step in evaluation.
+
+        Equivalent to list(self.eval_gen())"""
         return list(self.eval_gen(n))
 
     def eval_last(self, n):
+        """Evaluates the output of running the program on input n.
+
+        Example:
+        >>> Program([(5, 2), (5, 3)]).eval_last(12)
+        125
+        """
         if not isinstance(n, numbers.Integral):
             raise TypeError("can only evaluate numbers.Integral")
         change = True

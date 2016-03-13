@@ -49,5 +49,5 @@ if __name__ == '__main__':
             program = Program(process(f))
             arg = parse_num(sys.argv[2])
             process_program(program, arg)
-    except IOError, e:
+    except IOError as e:
         print("File does not exist: {}".format(sys.argv[1]))
