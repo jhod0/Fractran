@@ -3,7 +3,6 @@
 
 from __future__ import division, print_function
 import sys
-from parser import process, FracParseException
 from parser.core import parse_num
 from core import Program
 from factor import factor
@@ -46,7 +45,7 @@ if __name__ == '__main__':
         sys.exit(1)
     try:
         with open(sys.argv[1]) as f:
-            program = Program(process(f))
+            program = Program.from_file(f)
             arg = parse_num(sys.argv[2])
             process_program(program, arg)
     except IOError as e:

@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from __future__ import division, print_function
+from parser import process
 import numbers
 
 
@@ -30,6 +31,11 @@ class Program(object):
             if not isinstance(denom, numbers.Integral):
                 raise TypeError("denominator must be numbers.Integral")
             self.__fracs.append((num, denom))
+
+    @staticmethod
+    def from_file(filename):
+        """Parses a .frac file into a Program."""
+        return Program(process(filename))
 
     def description(self):
         return self.__description

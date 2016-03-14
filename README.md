@@ -18,6 +18,9 @@ start:
 
 Example FRACTRAN program files are found in the [examples directory](examples).
 
+The animate.py script can be used to generate a matplotlib animation of a program's execution, showing exponents as bars on a bar plot, and iterating.
+Naturally, it require matplotlib.
+
 ## File Formats
 
 Input files should contain one fraction per line, in the form:
@@ -32,4 +35,4 @@ Check the examples in the examples directory.
 ## Requirements
 
 Works with Python 2.7, working on compatibility with Python 3.
-Does not require external libraries.
+The animate.py script requires matplotlib. It is known to work with version 1.4.3, others have not been tested.
