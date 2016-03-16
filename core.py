@@ -40,6 +40,9 @@ class Program(object):
     def description(self):
         return self.__description
 
+    def raw_fractions(self):
+        return self.__fracs
+
     def eval_gen(self, n):
         """Runs the program with input n, yielding intermediate results.
 

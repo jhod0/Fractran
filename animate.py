@@ -18,6 +18,10 @@ the bar plot as the input number changes.
 Optionally, takes a third argument, a file name, and writes
 the animation to that file."""
 
+# TODO
+# Allow customization of prime range,
+# number of iterations, y-axis range
+
 from __future__ import division, print_function
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
@@ -77,7 +81,7 @@ if __name__ == '__main__':
         sys.exit(-1)
     this_num = parse_num(sys.argv[2])
     program_gen = program.eval_gen(this_num)
-    ani = animation.FuncAnimation(fig, animate, 10, init_func=init,
+    ani = animation.FuncAnimation(fig, animate, 30, init_func=init,
                                   interval=1000)
     if len(sys.argv) == 4:
         ani.save(sys.argv[3], writer='imagemagick')
